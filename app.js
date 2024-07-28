@@ -19,6 +19,12 @@ config({
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(cors(
+    {
+        origin:"http://localhost:5173",
+    }
+))
+
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/task", taskRouter);
 app.use(cors({
