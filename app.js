@@ -10,6 +10,10 @@ export const app = express();
 
 config({
     path: "./data/config.env",
+    headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+    }
 })
 
 app.use(express.json());
